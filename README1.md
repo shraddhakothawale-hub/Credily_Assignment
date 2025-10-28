@@ -62,27 +62,6 @@ Discovery    Verification   Planning
 - **Intelligent Routing**: Automatically routes queries to appropriate agents
 - **Credential Validation**: OpenBadge 2.0/3.0 compliant verification
 
-## 📋 Prerequisites
-
-- Python 3.9+
-- Groq API Key (for LLM)
-- Credly API Credentials (optional for live data)
-- Internet connection
-
-## 🔧 Installation
-
-```bash
-# Clone the repository
-git clone <repository-url>
-cd credly-ai-assistant
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Set up environment variables
-cp .env.example .env
-# Edit .env and add your GROQ_API_KEY
-```
 
 ## ⚙️ Configuration
 
@@ -90,8 +69,7 @@ Create a `.env` file:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
-CREDLY_API_TOKEN=your_credly_token (optional)
-CREDLY_ORG_ID=your_org_id (optional)
+
 ```
 
 ## 💻 Usage
@@ -117,11 +95,6 @@ response = assistant.chat("I have AWS and Python badges. What's my career path?"
 print(response)
 ```
 
-### Interactive Mode
-
-```bash
-python Agent.py
-```
 
 ## 🏛️ System Components
 
@@ -150,101 +123,3 @@ python Agent.py
 - Sharing instructions
 - Privacy settings help
 
-## 📊 Expected Outcomes
-
-### User Benefits
-✅ **Time Savings**: Reduce badge discovery time by 80%  
-✅ **Career Clarity**: Clear path to desired roles  
-✅ **Skill Validation**: Verified, shareable credentials  
-✅ **Network Growth**: Better LinkedIn visibility  
-✅ **Job Matching**: Connect to relevant opportunities  
-
-### Organizational Benefits
-✅ **Increased Engagement**: Higher badge acceptance rates  
-✅ **Better Analytics**: Track user skill development  
-✅ **Brand Visibility**: More badge sharing  
-✅ **Talent Pipeline**: Better skilled workforce  
-✅ **Reduced Support**: Automated assistance  
-
-## 🔐 Security & Privacy
-
-- All API calls use HTTPS/SSL
-- Credentials stored securely in environment variables
-- No personal data stored locally
-- GDPR compliant badge handling
-- User controls all privacy settings
-
-## 🧪 Testing
-
-```bash
-# Run unit tests
-python -m pytest tests/
-
-# Run integration tests
-python -m pytest tests/integration/
-
-# Test specific agent
-python -m pytest tests/test_discovery_agent.py
-```
-
-## 📈 Performance Metrics
-
-- **Response Time**: < 2 seconds average
-- **Accuracy**: 95%+ for badge recommendations
-- **API Reliability**: 99.9% uptime
-- **User Satisfaction**: Target 4.5/5 stars
-
-## 🛣️ Roadmap
-
-### Phase 1 (Current)
-- ✅ Basic multi-agent system
-- ✅ Badge discovery and verification
-- ✅ Career path recommendations
-
-### Phase 2 (Planned)
-- 🔄 Real-time webhook integration
-- 🔄 Advanced analytics dashboard
-- 🔄 Mobile app support
-
-### Phase 3 (Future)
-- 📅 AI-powered learning content generation
-- 📅 Peer comparison and networking
-- 📅 Automated skill assessments
-
-## 🤝 Contributing
-
-Contributions welcome! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📄 License
-
-MIT License - See LICENSE file for details
-
-## 🙏 Acknowledgments
-
-- **Credly/Pearson** for the digital credentialing platform
-- **LangChain/LangGraph** for the agent framework
-- **Groq** for fast LLM inference
-- **Open Badge Initiative** for standards
-
-## 📞 Support
-
-- **Documentation**: [Link to docs]
-- **Issues**: [GitHub Issues]
-- **Email**: support@example.com
-- **Community**: [Discord/Slack]
-
-## 📚 Resources
-
-- [Credly API Documentation](https://www.credly.com/docs)
-- [LangGraph Documentation](https://python.langchain.com/docs/langgraph)
-- [OpenBadge Standard](https://openbadges.org/)
-
----
-
-**Version**: 1.0.0  
-**Last Updated**: October 2025  
-**Maintainer**: Development Team
