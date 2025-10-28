@@ -23,9 +23,3 @@ This project uses **LangGraph** and **Groq’s Llama 3.3 model** to interact wit
 
 ---
 
-## 🧰 Setup Instructions
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/<your-username>/credly-credit-agent.git
-   cd credly-credit-agent
