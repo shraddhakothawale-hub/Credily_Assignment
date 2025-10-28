@@ -1,0 +1,76 @@
+graph TB
+    User[👤 User Interface]
+    
+    subgraph "LangGraph Multi-Agent System"
+        Router[🎯 Router Agent<br/>Intent Classification<br/>Agent Orchestration]
+        
+        subgraph "Specialized Agents"
+            Discovery[🔍 Discovery Agent<br/>Badge Search<br/>Recommendations]
+            Verification[✅ Verification Agent<br/>Credential Validation<br/>Metadata Extraction]
+            Planning[📊 Planning Agent<br/>Career Pathways<br/>Skill Gap Analysis]
+            Management[⚙️ Management Agent<br/>Badge Acceptance<br/>Sharing Guidance]
+            Skills[📈 Skills Analysis Agent<br/>Skill Extraction<br/>Trend Analysis]
+        end
+        
+        Synthesizer[🔄 Response Synthesizer<br/>Output Aggregation<br/>Format & Present]
+        
+        subgraph "State Management"
+            State[(🗄️ Agent State<br/>Messages<br/>Context<br/>User Profile)]
+        end
+    end
+    
+    subgraph "External Services"
+        CredlyAPI[🎓 Credly API<br/>Badge Data<br/>Verification<br/>Metadata]
+        JobAPI[💼 Job Market API<br/>Salary Data<br/>Skill Trends<br/>Openings]
+        LLM[🤖 Groq LLM<br/>llama-3.3-70b<br/>NLP Processing]
+    end
+    
+    subgraph "Data Layer"
+        BadgeDB[(📚 Badge Database<br/>Mock/Cache)]
+        SkillDB[(🎯 Skill Mappings<br/>Career Paths<br/>Requirements)]
+    end
+    
+    User -->|Query| Router
+    Router -->|Route| Discovery
+    Router -->|Route| Verification
+    Router -->|Route| Planning
+    Router -->|Route| Management
+    Router -->|Route| Skills
+    
+    Discovery --> Synthesizer
+    Verification --> Synthesizer
+    Planning --> Synthesizer
+    Management --> Synthesizer
+    Skills --> Synthesizer
+    
+    Synthesizer -->|Response| User
+    
+    Router -.->|Read/Write| State
+    Discovery -.->|Read/Write| State
+    Verification -.->|Read/Write| State
+    Planning -.->|Read/Write| State
+    Management -.->|Read/Write| State
+    Skills -.->|Read/Write| State
+    
+    Discovery -->|Search| CredlyAPI
+    Discovery -->|Query| BadgeDB
+    Verification -->|Validate| CredlyAPI
+    Planning -->|Insights| JobAPI
+    Planning -->|Match| SkillDB
+    Skills -->|Trends| JobAPI
+    Skills -->|Map| SkillDB
+    
+    Router -->|Classify| LLM
+    Discovery -->|Generate| LLM
+    Planning -->|Analyze| LLM
+    Skills -->|Reason| LLM
+    
+    style User fill:#e1f5ff
+    style Router fill:#fff3cd
+    style Synthesizer fill:#d4edda
+    style State fill:#f8d7da
+    style CredlyAPI fill:#d1ecf1
+    style LLM fill:#e2e3e5
+    
+    classDef agentStyle fill:#cfe2ff,stroke:#333,stroke-width:2px
+    class Discovery,Verification,Planning,Management,Skills agentStyle
