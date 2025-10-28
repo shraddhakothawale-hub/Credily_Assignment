@@ -503,6 +503,3 @@ Just ask!"
 
 ---
 
-**Document Version**: 1.0  
-**Last Updated**: October 2025  
-**Next Review**: January 2026
